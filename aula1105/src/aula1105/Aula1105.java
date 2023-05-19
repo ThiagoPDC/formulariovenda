@@ -48,12 +48,22 @@ public class Aula1105 {
         v.setDataVenda("11/05/2023");
         v.setFormaPagamento("Cartão");
         v.setCliente(c1);
+        
 
         //add os produtos
         v.addProduto(p1);
+        System.out.println(v.getValorTotal());
         v.addProduto(p2);
-        System.out.println(v.getCliente());
-    
+        System.out.println(v.getValorTotal());
+ 
+        
+        Produto p3 = new Produto();
+        p3.setNome("Bala");
+        p3.setValor(0.15);
+        p3.setQuantidade(30);
+        v.addProduto(p3);
+        System.out.println(v.getValorTotal());
+        
   }
     
 }

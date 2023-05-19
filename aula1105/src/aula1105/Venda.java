@@ -52,10 +52,6 @@ public class Venda {
         return valorTotal;
     }
 
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
     public Cliente getCliente() {
         return cliente;
     }
@@ -75,8 +71,18 @@ public class Venda {
     public void addProduto(Produto p){
     //adicionar o produto na lista
     this.listaProdutos.add(p);
+    this.calcularValorTotal();
+    }
     
     
+    private void calcularValorTotal(){
+    //percorre a lista produto e soma de acordo com o seu valor e sua quantidade
+        this.valorTotal = 0;
+        for (Produto p : this.listaProdutos){
+            double valorProdutoAtual = ( p.getValor() * p.getQuantidade());
+            this.valorTotal += valorProdutoAtual;
+            
+        }
     }
     
 }

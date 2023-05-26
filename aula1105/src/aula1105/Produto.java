@@ -36,5 +36,13 @@ public class Produto {
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+       Produto p = (Produto) obj;
+       return this.nome.equals(p.getNome());
+    }
+    
+    
     
 }

@@ -74,6 +74,13 @@ public class Venda {
     this.calcularValorTotal();
     }
     
+    public void excluirProduto(Produto p){
+        this.listaProdutos.remove(p);
+        this.calcularValorTotal();
+    
+    
+    }
+    
     
     private void calcularValorTotal(){
     //percorre a lista produto e soma de acordo com o seu valor e sua quantidade
@@ -84,5 +91,4 @@ public class Venda {
             
         }
     }
-    
 }

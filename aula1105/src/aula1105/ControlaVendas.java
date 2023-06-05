@@ -14,7 +14,7 @@ import java.util.List;
 public class ControlaVendas {
     private List<Venda> listaVendas;
     
-    public void ControlaVendas(){
+    public ControlaVendas(){
     this.listaVendas = new ArrayList();
     
     }
@@ -22,6 +22,28 @@ public class ControlaVendas {
     this.listaVendas.add(v);
     
     }
+    public List<Venda> getVendas(){
+        return this.listaVendas;
     
-    
+    }
+     public double getValorTotalVendas(){
+        double valorTotal = 0;
+        
+        for(Venda v : listaVendas){
+            valorTotal += v.getValorTotal();
+            
+        }
+        return  valorTotal;
+    }
+    public double getTotalPorFormaPagamento(String formaPagamento){
+    //calcular o valor ppor forma de pagamento
+    double valorTotal = 0;
+        for(Venda v : listaVendas){
+            if(v.getFormaPagamento().equalsIgnoreCase(formaPagamento)){
+            valorTotal += v.getValorTotal();
+        }
+            
+        }
+         return  valorTotal;
+    }
 }
